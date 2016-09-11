@@ -8,13 +8,13 @@ import java.util.Random;
  */
 public class BBS implements Generator {
 
-    private BigInteger p;
+    protected BigInteger p;
 
-    private BigInteger q;
+    protected BigInteger q;
 
-    private BigInteger n;
+    protected BigInteger n;
 
-    private BigInteger r;
+    protected BigInteger r;
 
     public BBS() {
         Random random = new Random();
@@ -27,18 +27,13 @@ public class BBS implements Generator {
     }
 
     @Override
-    public long getFirstState() {
-        return 0;
-    }
-
-    @Override
-    public Object getCurrentState() {
-        return null;
-    }
-
-    @Override
     public long generateNext() {
         r = r.shiftLeft(1).mod(n);
         return r.mod(BigInteger.valueOf(2)).longValue();
+    }
+
+    @Override
+    public Type getType() {
+        return Type.BIT;
     }
 }

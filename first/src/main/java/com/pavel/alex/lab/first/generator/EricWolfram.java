@@ -18,18 +18,13 @@ public class EricWolfram implements Generator {
     }
 
     @Override
-    public long getFirstState() {
-        return 0;
-    }
-
-    @Override
-    public Object getCurrentState() {
-        return null;
-    }
-
-    @Override
     public long generateNext() {
         r = (r << 1) ^ (r^(r>>>1));
         return r % 2;
+    }
+
+    @Override
+    public Type getType() {
+        return Type.BIT;
     }
 }

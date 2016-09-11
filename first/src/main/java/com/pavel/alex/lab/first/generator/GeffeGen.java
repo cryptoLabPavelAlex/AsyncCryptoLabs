@@ -15,20 +15,15 @@ public class GeffeGen implements Generator {
     }
 
     @Override
-    public long getFirstState() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public Object getCurrentState() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
     public long generateNext() {
         long x = l1.generateNext();
         long y = l2.generateNext();
         long s = l3.generateNext();
         return (s & x) ^ (s ^ 1) & y ;
+    }
+
+    @Override
+    public Type getType() {
+        return Type.BIT;
     }
 }

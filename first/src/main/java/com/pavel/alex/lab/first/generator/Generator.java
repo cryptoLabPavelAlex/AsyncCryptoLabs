@@ -6,11 +6,13 @@ package com.pavel.alex.lab.first.generator;
  */
 public interface Generator {
 
-    long getFirstState();
-
-    Object getCurrentState();
-
     long generateNext();
+
+    Type getType();
+
+    enum Type{
+        BYTE,BIT
+    }
 
 
     class LFSR implements Generator {
@@ -40,7 +42,7 @@ public interface Generator {
         public void reset(){
             currentState = firstState;
         }
-
+        @Override
         public long generateNext(){
             long outputBit = currentState & 1;
             long nextBit = Long.bitCount(currentState & multiplicativeMask) & 1 ;
@@ -48,19 +50,9 @@ public interface Generator {
             return outputBit;
         }
 
-        public long getFirstState(){
-            return firstState;
-        }
-
-        public Object getCurrentState() {
-            String binary = Long.toBinaryString(currentState & (0xFFFF_FFFF >>> (64 - registerLength)));
-            int needZeros = registerLength - binary.length();
-            StringBuilder builder = new StringBuilder(registerLength);
-            while (needZeros-- > 0) {
-                builder.append("0");
-            }
-            builder.append(binary);
-            return builder.toString();
+        @Override
+        public Type getType() {
+            return Type.BIT;
         }
 
     }

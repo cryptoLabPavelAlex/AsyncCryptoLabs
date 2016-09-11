@@ -17,17 +17,12 @@ public class L20 implements Generator {
     }
 
     @Override
-    public long getFirstState() {
-        return lfsr.getFirstState();
-    }
-
-    @Override
-    public Object getCurrentState() {
-        return lfsr.getCurrentState();
-    }
-
-    @Override
     public long generateNext() {
         return lfsr.generateNext();
+    }
+
+    @Override
+    public Type getType() {
+        return lfsr.getType();
     }
 }

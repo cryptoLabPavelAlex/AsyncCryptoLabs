@@ -22,20 +22,16 @@ public class BM implements Generator {
         T = nextRandomBigInteger(p);
     }
 
-    @Override
-    public long getFirstState() {
-        return 0;
-    }
-
-    @Override
-    public Object getCurrentState() {
-        return null;
-    }
 
     @Override
     public long generateNext() {
         T = a.modPow(T,p);
         return (T.compareTo(p.subtract(BigInteger.ONE).divide(BigInteger.valueOf(2)))==-1) ? 1 : 0;
+    }
+
+    @Override
+    public Type getType() {
+        return Type.BIT;
     }
 
     BigInteger nextRandomBigInteger(BigInteger n)  {

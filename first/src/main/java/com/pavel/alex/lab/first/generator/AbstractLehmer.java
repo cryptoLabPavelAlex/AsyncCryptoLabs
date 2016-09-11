@@ -21,13 +21,8 @@ public abstract class AbstractLehmer implements Generator {
     }
 
     @Override
-    public long getFirstState() {
-        return c;
-    }
-
-    @Override
-    public Object getCurrentState() {
-        return curState;
+    public Type getType() {
+        return Type.BYTE;
     }
 
 }
