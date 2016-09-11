@@ -1,9 +1,9 @@
 package com.pavel.alex.lab.first.test;
 
 import com.pavel.alex.lab.first.generator.Generator;
+import org.apache.commons.math3.distribution.NormalDistribution;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by pyshankov on 11.09.2016.
@@ -14,8 +14,11 @@ public abstract class AbstractStatisticalTest implements  StatisticalTest {
 
     protected double trustLevel;
 
-    public AbstractStatisticalTest(Generator generator,int sampleLength,double trustLevel) {
-        this.trustLevel=trustLevel;
+    protected int l;
+
+    public AbstractStatisticalTest(Generator generator,int sampleLength,double trustLevel,int l) {
+        this.trustLevel = trustLevel;
+        this.l = l;
         if(generator.getType().equals(Generator.Type.BYTE)){
             data = new  int[sampleLength];
             for (int i = 0 ; i < sampleLength ; i++)
@@ -23,7 +26,7 @@ public abstract class AbstractStatisticalTest implements  StatisticalTest {
         }
         if(generator.getType().equals(Generator.Type.BIT)){
             data = new int[1000];
-                // transform bit array to byte array
+                // TODO: transform bit array to byte array
         }
     }
 
@@ -33,12 +36,11 @@ public abstract class AbstractStatisticalTest implements  StatisticalTest {
         System.out.println("limit value: "+limitValue(trustLevel));
     }
 
-    protected static Map<Integer,Integer> getByteFrequency(int[] bytes){
-        Map<Integer,Integer> map = new HashMap<>();
-        for(int i = 0 ; i < 256; i++) map.put(i,0);
-        for(int i = 0 ; i < bytes.length; i++)
-            map.put(bytes[i],map.get(bytes[i])+1);
-        return  map;
+    @Override
+    public double limitValue(double trustLevel) {
+        //two side alternative
+        double quantile = new NormalDistribution(0,1).inverseCumulativeProbability(1-trustLevel);
+        return Math.sqrt(2*l)*quantile+l;
     }
 
 }
