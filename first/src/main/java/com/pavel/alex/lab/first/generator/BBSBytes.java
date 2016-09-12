@@ -1,11 +1,13 @@
 package com.pavel.alex.lab.first.generator;
 
+import java.math.BigInteger;
+
 public class BBSBytes extends BBS {
 
     @Override
     public long generateNext() {
-        //// TODO: 11.09.2016
-        throw new UnsupportedOperationException("Alex must implement this method!");
+        r = r.shiftLeft(1).mod(n);
+        return r.mod(BigInteger.valueOf(256)).longValue();
     }
 
     @Override

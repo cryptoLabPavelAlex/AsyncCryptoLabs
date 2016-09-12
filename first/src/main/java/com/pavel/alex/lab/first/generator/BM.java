@@ -5,11 +5,11 @@ import java.util.Random;
 
 public class BM implements Generator {
 
-    private BigInteger p;
+    protected BigInteger p;
 
-    private BigInteger a;
+    protected BigInteger a;
 
-    private BigInteger T;
+    protected BigInteger T;
 
     public BM() {
         String pHex = "CEA42B987C44FA642D80AD9F51F10457690DEF10C83D0BC1BCEE12FC3B6093E3";
@@ -31,7 +31,7 @@ public class BM implements Generator {
         return Type.BIT;
     }
 
-    BigInteger nextRandomBigInteger(BigInteger n)  {
+    protected BigInteger nextRandomBigInteger(BigInteger n)  {
         Random rand = new Random();
         BigInteger result = new BigInteger(n.bitLength(), rand);
         while( result.compareTo(n) >= 0 ) {
