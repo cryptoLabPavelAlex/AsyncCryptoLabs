@@ -1,8 +1,6 @@
 package com.pavel.alex.lab.first.generator;
 
-/**
- * Created by pyshankov on 11.09.2016.
- */
+
 public class BMBytes extends BM {
 
     @Override

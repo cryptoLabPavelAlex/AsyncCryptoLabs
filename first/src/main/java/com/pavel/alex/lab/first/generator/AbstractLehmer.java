@@ -1,8 +1,6 @@
 package com.pavel.alex.lab.first.generator;
 
-/**
- * Created by pyshankov on 10.09.2016.
- */
+
 public abstract class AbstractLehmer implements Generator {
 
     protected long curState;

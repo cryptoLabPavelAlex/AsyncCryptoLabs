@@ -6,9 +6,7 @@ import java.util.Map;
 
 import static com.pavel.alex.lab.first.additional.Utils.getByteFrequency;
 
-/**
- * Created by pyshankov on 11.09.2016.
- */
+
 public class StatisticalEquitabilityTest extends AbstractStatisticalTest {
 
 

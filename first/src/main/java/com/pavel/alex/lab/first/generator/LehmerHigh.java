@@ -1,8 +1,6 @@
 package com.pavel.alex.lab.first.generator;
 
-/**
- * Created by pyshankov on 10.09.2016.
- */
+
 public class LehmerHigh extends AbstractLehmer {
     @Override
     public long generateNext() {

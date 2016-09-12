@@ -2,9 +2,7 @@ package com.pavel.alex.lab.first.generator;
 
 import java.util.Random;
 
-/**
- * Created by pyshankov on 11.09.2016.
- */
+
 public class EricWolfram implements Generator {
 
     private long r;

@@ -3,9 +3,6 @@ package com.pavel.alex.lab.first.generator;
 import java.math.BigInteger;
 import java.util.Random;
 
-/**
- * Created by pyshankov on 11.09.2016.
- */
 public class BM implements Generator {
 
     private BigInteger p;

@@ -2,9 +2,6 @@ package com.pavel.alex.lab.first.generator;
 
 import java.util.Random;
 
-/**
- * Created by pyshankov on 10.09.2016.
- */
 public class L20 implements Generator {
 
     public Generator lfsr;

@@ -7,9 +7,7 @@ import java.util.Map;
 
 import static com.pavel.alex.lab.first.additional.Utils.*;
 
-/**
- * Created by pyshankov on 11.09.2016.
- */
+
 public class StatisticalSignIndependencyTest extends AbstractStatisticalTest {
 
     public StatisticalSignIndependencyTest(Generator generator, int sampleLength, double trustLevel) {

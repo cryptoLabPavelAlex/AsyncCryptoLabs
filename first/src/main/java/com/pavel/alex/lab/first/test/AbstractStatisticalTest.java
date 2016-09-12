@@ -5,9 +5,6 @@ import org.apache.commons.math3.distribution.NormalDistribution;
 
 import java.util.*;
 
-/**
- * Created by pyshankov on 11.09.2016.
- */
 public abstract class AbstractStatisticalTest implements  StatisticalTest {
 
     protected int[] data;
