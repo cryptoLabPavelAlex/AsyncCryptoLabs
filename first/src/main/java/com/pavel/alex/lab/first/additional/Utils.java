@@ -62,4 +62,40 @@ public class Utils {
         return map;
     }
 
+    public static Map<Integer,int[]> getLineSegmentFrequencies(int[] data,int r){
+        Map<Integer,int[]> map = new HashMap<>();
+        int m1 = data.length/r;
+        for (int j = 0; j < r; j++) {
+            for (int i = m1 * j; i < m1 * (j + 1); i++) {
+                int count=0;
+                for (int k = m1 * j; k < m1 * (j + 1); k++) {
+                    if(data[i]==data[k]){
+                        count++;
+                    }
+                }
+                if(map.get(data[i])==null) {
+                    map.put(data[i], new int[r]);
+                }
+                map.get(data[i])[j]=count;
+            }
+        }
+        return map;
+    }
+
+    public static Map<Integer,Integer> getSumElem(Map<Integer,int[]>  vals){
+        Map<Integer,Integer> map = new HashMap<>();
+        for (Map.Entry<Integer,int[]> entry : vals.entrySet()){
+            map.put(entry.getKey(),sum(entry.getValue()));
+        }
+        return map;
+    }
+
+    public static int sum(int[] vals){
+        int res=0;
+        for(int i : vals){
+            res+=i;
+        }
+        return res;
+    }
+
 }

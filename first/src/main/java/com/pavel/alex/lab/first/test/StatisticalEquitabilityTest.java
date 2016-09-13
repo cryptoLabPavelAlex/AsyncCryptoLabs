@@ -26,4 +26,9 @@ public class StatisticalEquitabilityTest extends AbstractStatisticalTest {
         return result;
     }
 
+    @Override
+    public String getName() {
+        return "Критерий проверки равномерности знаков";
+    }
+
 }

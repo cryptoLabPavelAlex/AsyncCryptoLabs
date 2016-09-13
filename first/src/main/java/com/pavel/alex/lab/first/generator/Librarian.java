@@ -8,7 +8,7 @@ public class Librarian implements Generator {
 
     private final String FILENAME = "kant.txt";
     private int index = 0;
-    private byte[] array;
+    private int[] array;
 
     public Librarian() {
         try {
@@ -18,7 +18,13 @@ public class Librarian implements Generator {
             while (sc.hasNext()) {
                 sb.append(sc.next());
             }
-            array = sb.toString().getBytes();
+            byte[] b = sb.toString().getBytes();
+
+             array = new int[b.length];
+            for (int i = 0 ; i < array.length ; i++){
+                if(b[i]<0) array[i] = b[i] + 256;
+                else array[i] = b[i];
+            }
         }catch (FileNotFoundException e) {
             e.printStackTrace();
         }

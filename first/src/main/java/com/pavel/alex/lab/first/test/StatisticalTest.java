@@ -5,4 +5,5 @@ public interface StatisticalTest {
     void test();
     double computeStatistic();
     double limitValue(double trustLevel);
+    String getName();
 }

@@ -35,7 +35,11 @@ public class StatisticalSignIndependencyTest extends AbstractStatisticalTest {
                 }
             }
         }
-        System.out.println(result);
         return n * (result - 1);
+    }
+
+    @Override
+    public String getName() {
+        return "Критерий проверки независимости знаков";
     }
 }
