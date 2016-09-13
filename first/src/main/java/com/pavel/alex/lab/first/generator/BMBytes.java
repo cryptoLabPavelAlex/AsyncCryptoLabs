@@ -12,10 +12,11 @@ public class BMBytes extends BM {
     @Override
     public long generateNext() {
         T = a.modPow(T,p);
-        BigInteger k1 = T.multiply(BigInteger.valueOf(256)).divide(p.subtract(BigInteger.valueOf(1)));
-        BigInteger k2 = (T.multiply(BigInteger.valueOf(256)).divide(p.subtract(BigInteger.valueOf(1)))).subtract(BigInteger.valueOf(1));
-
-        return Long.valueOf(String.valueOf(k1));  //How to find k
+        BigInteger k = (T.multiply(BigInteger.valueOf(256)).divide(p.subtract(BigInteger.valueOf(1)))).subtract(BigInteger.valueOf(1));
+        if (!k<T.multiply(BigInteger.valueOf(256)).divide(p.subtract(BigInteger.valueOf(1)))){
+            throw new Exeption();
+        }
+        return Long.valueOf(String.valueOf(k));
     }
 
     @Override
