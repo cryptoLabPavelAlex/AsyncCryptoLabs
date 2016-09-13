@@ -13,7 +13,8 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) {
 
-        Generator generator = new BBSBytes();
+
+        Generator generator = new BBS();
 
         StatisticalTest test = new StatisticalSignIndependencyTest(generator,1000,0.05);
         test.test();
