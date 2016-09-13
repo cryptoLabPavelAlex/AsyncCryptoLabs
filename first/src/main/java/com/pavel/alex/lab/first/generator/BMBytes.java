@@ -13,8 +13,8 @@ public class BMBytes extends BM {
     public long generateNext() {
         T = a.modPow(T,p);
         BigInteger k = (T.multiply(BigInteger.valueOf(256)).divide(p.subtract(BigInteger.valueOf(1)))).subtract(BigInteger.valueOf(1));
-        if (!k<T.multiply(BigInteger.valueOf(256)).divide(p.subtract(BigInteger.valueOf(1)))){
-            throw new Exeption();
+        if (k.compareTo(T.multiply(BigInteger.valueOf(256)).divide(p.subtract(BigInteger.valueOf(1))))<0){
+            throw new IllegalStateException();
         }
         return Long.valueOf(String.valueOf(k));
     }
