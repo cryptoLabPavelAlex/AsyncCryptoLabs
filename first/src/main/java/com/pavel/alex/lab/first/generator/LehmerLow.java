@@ -9,4 +9,9 @@ public class LehmerLow extends AbstractLehmer {
 //        System.out.println(Long.toBinaryString(curState&0b11111111));
         return curState & 0b11111111;
     }
+
+    @Override
+    public String getName() {
+        return "LehmerLow";
+    }
 }

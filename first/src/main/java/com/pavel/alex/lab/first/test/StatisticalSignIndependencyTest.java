@@ -8,7 +8,7 @@ import java.util.Map;
 import static com.pavel.alex.lab.first.additional.Utils.*;
 
 
-public class StatisticalSignIndependencyTest extends AbstractStatisticalTest {
+public final class StatisticalSignIndependencyTest extends AbstractStatisticalTest {
 
     public StatisticalSignIndependencyTest(Generator generator, int sampleLength, double trustLevel) {
         super(generator,sampleLength,trustLevel,255*255);

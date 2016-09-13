@@ -8,7 +8,7 @@ import java.util.Map;
 import static com.pavel.alex.lab.first.additional.Utils.getLineSegmentFrequencies;
 import static com.pavel.alex.lab.first.additional.Utils.getSumElem;
 
-public class StatisticalUniformityTest extends AbstractStatisticalTest {
+public final class StatisticalUniformityTest extends AbstractStatisticalTest {
 
     private int r;
 

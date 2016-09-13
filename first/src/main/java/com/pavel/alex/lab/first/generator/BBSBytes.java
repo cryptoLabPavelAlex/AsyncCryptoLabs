@@ -15,4 +15,9 @@ public class BBSBytes extends BBS {
         return Type.BYTE;
     }
 
+    @Override
+    public String getName() {
+        return "BBSBytes";
+    }
+
 }

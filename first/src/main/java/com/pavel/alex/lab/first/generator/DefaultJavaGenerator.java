@@ -20,4 +20,9 @@ public class DefaultJavaGenerator implements Generator {
     public Type getType() {
         return Type.BYTE;
     }
+
+    @Override
+    public String getName() {
+        return "Default Java generator";
+    }
 }

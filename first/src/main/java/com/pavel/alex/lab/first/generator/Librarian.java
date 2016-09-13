@@ -42,4 +42,9 @@ public class Librarian implements Generator {
     public Type getType() {
         return Type.BYTE;
     }
+
+    @Override
+    public String getName() {
+        return "Librarian";
+    }
 }

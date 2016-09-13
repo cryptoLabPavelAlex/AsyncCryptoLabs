@@ -14,8 +14,11 @@ public abstract class AbstractStatisticalTest implements  StatisticalTest {
 
     protected int l;
 
+    private Generator generator;
+
     public AbstractStatisticalTest(Generator generator,int sampleLength,double trustLevel,int l) {
         this.trustLevel = trustLevel;
+        this.generator=generator;
         this.l = l;
         if(generator.getType().equals(Generator.Type.BYTE)){
             data = new  int[sampleLength];
@@ -36,8 +39,11 @@ public abstract class AbstractStatisticalTest implements  StatisticalTest {
 
     @Override
     public void test() {
+        System.out.println("--- Generator : "+generator.getName()+" ---");
+        System.out.println("--- Test : "+this.getName()+", уровень доверия: "+this.trustLevel+" ---");
         System.out.println("statistic: "+computeStatistic());
         System.out.println("limit value: "+limitValue(trustLevel));
+        System.out.println();
     }
 
     @Override

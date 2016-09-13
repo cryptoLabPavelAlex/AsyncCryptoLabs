@@ -7,7 +7,7 @@ import java.util.Map;
 import static com.pavel.alex.lab.first.additional.Utils.getByteFrequency;
 
 
-public class StatisticalEquitabilityTest extends AbstractStatisticalTest {
+public final class StatisticalEquitabilityTest extends AbstractStatisticalTest {
 
 
     public StatisticalEquitabilityTest(Generator generator, int sampleLength, double trustLevel) {

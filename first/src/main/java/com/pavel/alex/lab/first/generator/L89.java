@@ -22,4 +22,9 @@ public class L89 implements Generator {
     public Type getType() {
         return lfsr.getType();
     }
+
+    @Override
+    public String getName() {
+        return "L89";
+    }
 }

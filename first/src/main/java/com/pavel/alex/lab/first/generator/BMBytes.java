@@ -24,4 +24,9 @@ public class BMBytes extends BM {
         return Type.BYTE;
     }
 
+    @Override
+    public String getName() {
+        return "BMBytes";
+    }
+
 }

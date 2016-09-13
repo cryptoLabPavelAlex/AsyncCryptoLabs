@@ -22,4 +22,9 @@ public class L20 implements Generator {
     public Type getType() {
         return lfsr.getType();
     }
+
+    @Override
+    public String getName() {
+        return "L20";
+    }
 }

@@ -12,4 +12,9 @@ public class LehmerHigh extends AbstractLehmer {
         return  (length<8) ? curState : curState >>> (length - 7);
 
     }
+
+    @Override
+    public String getName() {
+        return "LehmerHigh";
+    }
 }

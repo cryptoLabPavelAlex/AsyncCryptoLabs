@@ -34,4 +34,9 @@ public class BBS implements Generator {
     public Type getType() {
         return Type.BIT;
     }
+
+    @Override
+    public String getName() {
+        return "BBS";
+    }
 }

@@ -40,5 +40,10 @@ public class BM implements Generator {
         return result;
     }
 
+    @Override
+    public String getName() {
+        return "BM";
+    }
+
 
 }

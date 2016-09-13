@@ -7,6 +7,10 @@ public interface Generator {
 
     Type getType();
 
+   default String getName(){
+       return this.getClass().getSimpleName();
+   }
+
     enum Type{
         BYTE,BIT
     }
@@ -50,6 +54,11 @@ public interface Generator {
         @Override
         public Type getType() {
             return Type.BIT;
+        }
+
+        @Override
+        public String getName() {
+            return "LFSR";
         }
 
     }
